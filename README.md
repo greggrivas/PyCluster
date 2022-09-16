@@ -5,8 +5,10 @@ The application includes a built-in Instructions manual that can be consulted fo
 A more detailed guide of how to use the application can be found in my thesis at: .......
 
 ## Installation ##
-For the installation of the application you must download the PyCluster folder. Then the application can be started by double-clicking the c;uster_app.py file.
-The application may take a few moments to load!
+For the installation of the application you must download the PyCluster folder. Then the application can be started by double-clicking the cluster_app.py file.
+To download the folder you can visit https://minhaskamal.github.io/DownGit and paste the folder link in the respective field. Then, simple press download and a .zip file with the folder will be downloaded.
+
+Notice that initially the application may take a few moments to start!
 
 A set of example files that can be used to experiment with the application's features are also provided and refer to the M7 open cluster. These example files 
 include the magnitude coordinates files that can be used to acquire the magnitudes of the stars through GAIA, the photometric analysis of the cluster by PyMovie and
