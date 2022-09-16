@@ -1,0 +1,91 @@
+				------*INSTRUCTIONS*-------								
+This is the instruction manual for the cluster photometry laboratory exercise. It includes ONLY
+the steps required in order for the application to work properly and not any analysis instructions.
+For analysis instructions see Chapter 4 of my Thesis.
+Link: 
+
+This application makes use of 3 .csv files. 
+• one csv file that contains the flux as given by the analysis in PyMovie, 
+• one csv file that contains the magnitudes of the stars from the Gaia archive
+• one file that contains only the coordinates of the stars and
+  can be used to find the Gaia magnitudes through the Gaia API. 
+  
+These files howerver MUST be edited in order to produce a format compatible with 
+the application since both PyMovie and PlateSolve3 create .csv files that contain few issues. 
+(The PyMovie file contains some comments that need to be removed in order for the file to be read 
+by the application and the PlateSolve3 file has an issue with the seperators as well as magnitudes
+from a different database). Below a suggested pipeline is given that will result in the 2 required
+.csv files that will be used to plot the result.
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+◆◆◆ STEP 1 | PyMovie ◆◆◆
+After acquiring the PyMovie .csv file you can rename it (eg. PyMovieFlux/PyMovieCounts etc) to
+something easily recognisable since it will be used directly for the creation of the plots. Then 
+YOU MUST OPEN it using Notepad++ and DELETE ANY line that starts with # and therefore is a comment.
+The only content of the file now should be very similar to a table with values seperated by a ','.
+This file is quite big so an example of how it should look like at the end is given below:
+
+FrameNum,timeInfo,signal-ap23,...
+0.00,[19:29:09.6680326],8749399.00,...
+1.00,[19:29:11.4901007],9389562.00,...
+...
+...
+If you don't edit this file then the application will crash!!! 
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+◆◆◆ STEP 2 | PlateSolve3 ◆◆◆
+
+After running the PlateSolve3 platesolve you must copy the result and paste it into a .csv file 
+(again using Notepad++). An example of how this file looks like is given below:
+
+SeqNum,  Xcen ,  Ycen ,  Total    ,  SNR ,  RMS  ,  AR  ,MagEst, UC4Mag,    RA   ,   Dec   
+0     ,1108,51,239,41 ,139616,5   ,102,2 ,9,09   ,1,07  ,7,8   ,6,77  ,17 53 54,741,-34 45 09,72
+1     ,536,35 ,1032,97,139406,7   ,88,3  ,8,98   ,1,06  ,7,8   ,6,56  ,17 53 23,494,-34 53 42,37
+...
+...
+
+This file's format however IS WRONG and has issues with the column separators. First
+you must look for the coordinates columns (RA, Dec) at the end of the table. Once you find them
+you will notice that PlateSolve3 uses ',' to separate both the columns and the decimal point. So
+you must replace the ','  before the decimal digits with '.' (for example PlateSolve3 creates a
+coordinate like this: 17 53 46,441 and you must edit it to 17 53 46.441). 
+
+!!!!A good tip for fast editing in Notepad++ is pressing Ctrl+Shift+Alt +left click and then
+dragging the cursor over all of the ',' signs and replace them with '.' instantly.!!!!
+
+Once you "fix" the coordinates you must copy them (both RA and Dec) into a new empty .csv file
+and create 2 columns. Rename this file to Gaia-coordinates.csv. This file can then be used in 
+the Gaia API to get the desired magnitudes. An example of how the file should look like is this:
+
+RA,Dec
+17 53 54.741, -34 45 09.72
+17 53 23.494, -34 53 42.37
+...,...
+...,...
+
+!!!NOTICE THAT VALUES ARE SEPARETED BY ',' AND NOTHING ELSE.!!!
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+◆◆◆ STEP 3 | Gaia API ◆◆◆
+
+Once you have the Gaia-coordinates.csv you can use the application's feature and get the Gaia
+magnitudes of the stars. The application will create a Gmags.csv file that contains only the
+magnitudes. This Gmags.csv file can now be used for the final analysis as the magnitude file!
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+◆◆◆ STEP 4 | Plotting ◆◆◆
+
+Now you only have to input the Gmags.csv file containing the magnitudes and the PyMovie csv file 
+containing the Counts into the respective fields at the bottom and press Plot. 
+
+!!!THE MAGNITUDES MUST ALWAYS BE ON THE 1ST COLUMN OF THE FILE OR THE APP WILL CRASH!!!
+This means that you can use different file configuration if you want AS LONG AS the
+magnitudes remain on the 1st column
+
+!!! FOR PLOTTING TO WORK YOU MUST ALSO VISIT THE SETTINGS TAB AND ENTER THE NUMBER OF APERTURES
+USED IN PyMovie !!!
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+◆◆◆ MISC ◆◆◆
+
+The application also provides a feature to feature to convert excel files into csv file types.
+The application also provides a feature to inspect the content of csv files (Edit File tab)
+
