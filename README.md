@@ -2,7 +2,7 @@
 This is an application created to facilitate the analysis required for the Open Cluster laboratory exercice in "Observational Astrnomy" course.
 The application includes a built-in Instructions manual that can be consulted for advice regarding the required steps.
 
-A more detailed guide of how to use the application can be found in my thesis at: [](https://ikee.lib.auth.gr/record/347145/files/grivas.pdf)
+A more detailed guide of how to use the application can be found in my thesis [here.](https://ikee.lib.auth.gr/record/347145/files/grivas.pdf)
 
 ## Installation ##
 For the installation of the application you must download the PyCluster folder. Then the application can be started by double-clicking the cluster_app.py file.
