@@ -6,7 +6,7 @@ A more detailed guide of how to use the application can be found in my thesis [h
 
 ## Installation ##
 For the installation of the application you must download the PyCluster folder. Then the application can be started by double-clicking the cluster_app.py file.
-To download the folder you can visit https://minhaskamal.github.io/DownGit and paste the folder link in the respective field. Then, simple press download and a .zip file with the folder will be downloaded.
+To download the folder navigate to the green "<>Code" button at the top right and then "Download zip".
 
 Notice that initially the application may take a few moments to start!
 
