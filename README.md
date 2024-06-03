@@ -14,7 +14,7 @@ A set of example files that can be used to experiment with the application's fea
 include the magnitude coordinates files that can be used to acquire the magnitudes of the stars through GAIA, the photometric analysis of the cluster by PyMovie and
 the extracted magnitudes of the stars.
 
-## Requirments ##
+## Requirements ##
 In order for the application to operate the following libraries must be installed:
 
 * Matplotlib
