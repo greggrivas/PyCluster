@@ -4,6 +4,10 @@ The application includes a built-in Instructions manual that can be consulted fo
 
 A more detailed guide of how to use the application can be found in my thesis [here.](https://ikee.lib.auth.gr/record/347145/files/grivas.pdf)
 
+## Preview ##
+
+![Alt text](images/1.png)
+
 ## Installation ##
 For the installation of the application you must download the PyCluster folder. Then the application can be started by double-clicking the cluster_app.py file.
 To download the folder navigate to the green "<>Code" button at the top right and then "Download zip".
