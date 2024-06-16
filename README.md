@@ -5,8 +5,17 @@ The application includes a built-in Instructions manual that can be consulted fo
 A more detailed guide of how to use the application can be found in my thesis [here.](https://ikee.lib.auth.gr/record/347145/files/grivas.pdf)
 
 ## Preview ##
+Below a few screenshots of the application are presented. The first image showcases the application's main UI while the second image showcases the GAIA API interface.
 
-![Alt text](images/1.png)
+<p align="center">
+  <img src="/images/1.png" alt="image1" width="70%" height="auto">
+</p>
+
+***
+
+<p align="center">
+  <img src="/images/2.png" alt="image2" width="70%" height="auto">
+</p>
 
 ## Installation ##
 For the installation of the application you must download the PyCluster folder. Then the application can be started by double-clicking the cluster_app.py file.
